@@ -1,7 +1,7 @@
 /* Used as starting data for ShopPage */
 
-const SHOP_DATA = [
-    {
+const SHOP_DATA = {
+  hats:  {
       id: 1,
       title: 'Hats',
       routeName: 'hats',
@@ -37,41 +37,41 @@ const SHOP_DATA = [
         {
           id: 5,
           name: 'Green Beanie',
-          // imageUrl: 'https://i.ibb.co/YTjW3vF/green-beanie.png',
-          imageUrl: "/images/shop-img/hats/green-beanie.png",
+           imageUrl: 'https://i.ibb.co/YTjW3vF/green-beanie.png',
+         // imageUrl: "/images/shop-img/hats/green-beanie.png",
           price: 18
         },
         {
           id: 6,
           name: 'Palm Tree Cap',
-          // imageUrl: 'https://i.ibb.co/rKBDvJX/palm-tree-cap.png',
-          imageUrl: "/images/shop-img/hats/palm-tree-cap.png",
+           imageUrl: 'https://i.ibb.co/rKBDvJX/palm-tree-cap.png',
+         // imageUrl: "/images/shop-img/hats/palm-tree-cap.png",
           price: 14
         },
         {
           id: 7,
           name: 'Red Beanie',
-          // imageUrl: 'https://i.ibb.co/bLB646Z/red-beanie.png',
-          imageUrl: "/images/shop-img/hats/red-beanie.png",
+           imageUrl: 'https://i.ibb.co/bLB646Z/red-beanie.png',
+         // imageUrl: "/images/shop-img/hats/red-beanie.png",
           price: 18
         },
         {
           id: 8,
           name: 'Wolf Cap',
-          // imageUrl: 'https://i.ibb.co/1f2nWMM/wolf-cap.png',
-          imageUrl: "/images/shop-img/hats/wolf-cap.png",
+           imageUrl: 'https://i.ibb.co/1f2nWMM/wolf-cap.png',
+         // imageUrl: "/images/shop-img/hats/wolf-cap.png",
           price: 14
         },
         {
           id: 9,
           name: 'Blue Snapback',
-          // imageUrl: 'https://i.ibb.co/X2VJP2W/blue-snapback.png',
-          imageUrl: "/images/shop-img/hats/blue-snapback.png",
+           imageUrl: 'https://i.ibb.co/X2VJP2W/blue-snapback.png',
+         // imageUrl: "/images/shop-img/hats/blue-snapback.png",
           price: 16
         }
       ]
     },
-    {
+   sneakers: {
       id: 2,
       title: 'Sneakers',
       routeName: 'sneakers',
@@ -128,13 +128,13 @@ const SHOP_DATA = [
         {
           id: 17,
           name: 'Timberlands',
-          // imageUrl: 'https://i.ibb.co/Mhh6wBg/timberlands.png',
-          imageUrl: "/images/shop-img/sneakers/timberlands.png",
+           imageUrl: 'https://i.ibb.co/Mhh6wBg/timberlands.png',
+         // imageUrl: "/images/shop-img/sneakers/timberlands.png",
           price: 200
         }
       ]
     },
-    {
+    jackets:{
       id: 3,
       title: 'Jackets',
       routeName: 'jackets',
@@ -170,13 +170,13 @@ const SHOP_DATA = [
         {
           id: 22,
           name: 'Tan Trench',
-          // imageUrl: 'https://i.ibb.co/M6hHc3F/brown-trench.png',
-          imageUrl: "/images/shop-img/jackets/brown-trench.png",
+           imageUrl: 'https://i.ibb.co/M6hHc3F/brown-trench.png',
+         // imageUrl: "/images/shop-img/jackets/brown-trench.png",
           price: 185
         }
       ]
     },
-    {
+    womens:{
       id: 4,
       title: 'Womens',
       routeName: 'womens',
@@ -219,20 +219,20 @@ const SHOP_DATA = [
         {
           id: 28,
           name: 'Yellow Track Suit',
-          // imageUrl: 'https://i.ibb.co/v1cvwNf/yellow-track-suit.png',
-          imageUrl: "/images/shop-img/womens/yellow-track-suit.png",
+           imageUrl: 'https://i.ibb.co/v1cvwNf/yellow-track-suit.png',
+         // imageUrl: "/images/shop-img/womens/yellow-track-suit.png",
           price: 135
         },
         {
           id: 29,
           name: 'White Blouse',
-          // imageUrl: 'https://i.ibb.co/qBcrsJg/white-vest.png',
-          imageUrl: "/images/shop-img/womens/white-vest.png",
+           imageUrl: 'https://i.ibb.co/qBcrsJg/white-vest.png',
+          //imageUrl: "/images/shop-img/womens/white-vest.png",
           price: 20
         }
       ]
     },
-    {
+   mens: {
       id: 5,
       title: 'Mens',
       routeName: 'mens',
@@ -275,13 +275,13 @@ const SHOP_DATA = [
         {
           id: 35,
           name: 'Burgundy T-shirt',
-          // imageUrl: 'https://i.ibb.co/mh3VM1f/polka-dot-shirt.png',
-          imageUrl: "/images/shop-img/mens/polka-dot-shirt.png",
+           imageUrl: 'https://i.ibb.co/mh3VM1f/polka-dot-shirt.png',
+         // imageUrl: "/images/shop-img/mens/polka-dot-shirt.png",
           price: 25
         }
       ]
     }
-  ];
+};
   
   export default SHOP_DATA;
   

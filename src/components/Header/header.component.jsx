@@ -1,6 +1,6 @@
 import React from "react";
 import "./header.styles.scss";
-import { ReactComponent as Logo } from "../../assests/crown.svg";
+import { ReactComponent as Logo } from "../../assests/LRq76vTID0.svg";
 import CartIcon from "../Cart-Icon/cart-icon.component";
 import CartDropDown from "../Cart-Dropdown/cart-dropdown.component";
 
