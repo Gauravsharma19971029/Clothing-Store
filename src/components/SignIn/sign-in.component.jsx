@@ -2,6 +2,8 @@ import React from "react";
 import "./sign-in.styles.scss";
 import FormInput from "../Form-Input/form-input.component";
 import CustomButton from "../CustomButton/custom-button.component";
+import {connect} from 'react-redux'
+import {googleSigninStart,emailSigninStart} from '../../redux/user/user.action'
 
 import { auth, SignInWithGoogle } from "../../firebase/firebase.utils";
 
@@ -17,15 +19,17 @@ class SignIn extends React.Component {
   handleSubmit = async (e) => {
     e.preventDefault();
     const { email, password } = this.state;
-    try {
-      await auth.signInWithEmailAndPassword(email, password);
-      this.setState({
-        email: "",
-        password: "",
-      });
-    } catch (error) {
-      console.log("Error in Signing in " + error);
-    }
+    const {emailSigninStart} = this.props
+    emailSigninStart(email,password)
+    // try {
+    //   await auth.signInWithEmailAndPassword(email, password);
+    //   this.setState({
+    //     email: "",
+    //     password: "",
+    //   });
+    // } catch (error) {
+    //   console.log("Error in Signing in " + error);
+    // }
   };
 
   handleChange = (e) => {
@@ -34,6 +38,8 @@ class SignIn extends React.Component {
   };
 
   render() {
+    const {googleSigninStart} = this.props;
+    
     return (
       <div className="sign-in">
         <h2> I already have an account</h2>
@@ -60,7 +66,7 @@ class SignIn extends React.Component {
             <CustomButton type="submit"> Submit</CustomButton>
             <CustomButton
               type="button"
-              onClick={SignInWithGoogle}
+              onClick={googleSigninStart}
               isGoogleSignIn
             >
               {" "}
@@ -73,4 +79,9 @@ class SignIn extends React.Component {
   }
 }
 
-export default SignIn;
+const mapDispatchToProps = dispatch => ({
+  googleSigninStart : () => dispatch(googleSigninStart()),
+  emailSigninStart : (email,password) => dispatch(emailSigninStart({email,password}))
+})
+
+export default connect(null,mapDispatchToProps)(SignIn);
