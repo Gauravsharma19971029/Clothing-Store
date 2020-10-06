@@ -5,14 +5,7 @@ import Home from "./pages/Home/Home.component.jsx";
 import ShopPage from "./pages/Shop/shop.component.jsx";
 import SignInAndSignUp from "./pages/SignIn-SignUp/signIn-signUp.component.jsx";
 import CheckoutPage from "./pages/Checkout/checkout.component";
-
 import { Route, Switch, Redirect } from "react-router-dom";
-import {
-  auth,
-  createUserProfileDocument,
-  addCollectionAndDocuments,
-} from "./firebase/firebase.utils";
-import { setCurrentUser } from "./redux/user/user.action";
 import { checkUserSession } from "./redux/user/user.action";
 import { selectCollectionForPreview } from "./redux/shop/shop.selector";
 import { selectCurrentUser } from "./redux/user/user.selector";
