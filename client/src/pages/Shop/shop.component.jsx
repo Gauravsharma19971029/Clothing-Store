@@ -14,9 +14,7 @@ const ShopPage = ({ fetchCollectionsStart, match }) => {
 
   return (
     <div className="shop-page">
-      {/* We have to use isCollectionLoaded because initially when we don't have collection and components mount it will return null and componentdidmount get called after render
-      rendering for one time .But in case of CollectionOverview we use isCollectionFetching only because when collections is npt loaded it will return an empty array*/}
-
+      
       <Route
         exact
         path={`${match.path}`}

@@ -32,7 +32,7 @@ const CheckoutPage = ({cartItems,total}) => (
             <CheckoutItem key={cartItem.id} cartItem={cartItem}></CheckoutItem>)
     }
     <div className='total'>
-<span>TOTAL : ${total}</span>
+<span>TOTAL : Rs.{total}</span>
 
     </div>
     <div className="test-warning">
