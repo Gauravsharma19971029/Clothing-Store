@@ -1,18 +1,39 @@
 import SHOP_DATA from './shop.data'
 import ShopActionTypes  from './shop.types'
 const INTIAL_STATE = {
-    collections:null
+    collections:null,
+    isFetching:false,
+    errorMessage:undefined
 }
 
 const shopReducer = (state = INTIAL_STATE,action) =>
 {
     switch(action.type)
     {
-        case ShopActionTypes.UPDATE_COLLECTIONS:
+        case ShopActionTypes.FETCH_COLLECTIONS_START:
             {console.log(action.payload)
             return {
                 ...state,
-                collections:action.payload
+                isFetching:true
+
+            }
+        }
+        case ShopActionTypes.FETCH_COLLECTIONS_SUCCESS:
+            {console.log(action.payload)
+            return {
+                ...state,
+                collections:action.payload,
+                isFetching:false
+
+            }
+        }
+        case ShopActionTypes.FETCH_COLLECTIONS_FAILURE:
+            {console.log(action.payload)
+            return {
+                ...state,
+                collections:action.payload,
+                isFetching:false,
+                errorMessage:action.payload
 
             }
         }
