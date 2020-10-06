@@ -5,10 +5,7 @@ import {withRouter} from 'react-router-dom'
 
 const CollectionPreview = ({title,items,routeName,history,match}) => 
 {
-    console.log(routeName,"routeName");
-    console.log(match,"match");
-    console.log(history,"history");
-
+   
 
     return(
     
