@@ -1,4 +1,3 @@
-import SHOP_DATA from './shop.data'
 import ShopActionTypes  from './shop.types'
 const INTIAL_STATE = {
     collections:null,
@@ -14,7 +13,8 @@ const shopReducer = (state = INTIAL_STATE,action) =>
             {console.log(action.payload)
             return {
                 ...state,
-                isFetching:true
+                isFetching:true,
+                errorMessage:undefined
 
             }
         }
@@ -23,7 +23,8 @@ const shopReducer = (state = INTIAL_STATE,action) =>
             return {
                 ...state,
                 collections:action.payload,
-                isFetching:false
+                isFetching:false,
+                errorMessage:undefined
 
             }
         }

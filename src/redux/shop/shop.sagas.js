@@ -15,14 +15,6 @@ export function* fetchCollectionsStart() {
       ShopActionTypes.FETCH_COLLECTIONS_START,
       fetchCollectionAsync
     );
-  
-
-  // console.log(collectionRef)
-  //    CollectionRef.onSnapshot(async(snapshot) =>{
-  //     // console.log(snapshot)
-  //       const collectionsMap =   convertCollectionSnapshotToMap(snapshot)
-  //   },error => {
-  //   })
 }
 
 export function* fetchCollectionAsync() {
