@@ -4,7 +4,6 @@ import "./checkout-item.styles.scss";
 
 import {connect} from 'react-redux'
 import {clearItemFromCart,addItem,removeItem} from '../../redux/cart/cart.action'
-import StripeButton from '../Stripe-Button/stripe-button.component'
 
 const CheckoutItem = ({ cartItem,clearItem,addItem,removeItem }) => {
     const { imageUrl, name, quantity, price } = cartItem;

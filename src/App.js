@@ -7,8 +7,11 @@ import SignInAndSignUp from "./pages/SignIn-SignUp/signIn-signUp.component.jsx";
 import CheckoutPage from './pages/Checkout/checkout.component'
 
 import { Route, Switch, Redirect } from "react-router-dom";
-import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
+import { auth, createUserProfileDocument,addCollectionAndDocuments } from "./firebase/firebase.utils";
 import { setCurrentUser } from "./redux/user/user.action";
+import { selectCollectionForPreview } from "./redux/shop/shop.selector";
+import { selectCurrentUser } from "./redux/user/user.selector";
+import { createStructuredSelector} from 'reselect'
 import { connect } from "react-redux";
 
 class App extends React.Component {
@@ -26,7 +29,7 @@ class App extends React.Component {
 
 
   componentDidMount() {
-    const { setCurrentUser } = this.props;
+    const { setCurrentUser,collectionsArray } = this.props;
     this.unsubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
       if (userAuth) {
         const userRef = await createUserProfileDocument(userAuth);
@@ -37,6 +40,9 @@ class App extends React.Component {
           });
         });
         setCurrentUser(userAuth)
+  //      console.log("above addCollection")
+   //     console.log(collectionsArray)
+     //   addCollectionAndDocuments('collections',collectionsArray.map(({title,items}) => ( {title,items})))
       } else {
         // this.setState({ currentUser: null });
         setCurrentUser(null)
@@ -49,8 +55,8 @@ class App extends React.Component {
   }
 
   render() {
-    console.log(this.currentUser);
-    console.log(this.props);
+    // console.log(this.currentUser);
+    // console.log(this.props);
     return (
       <div>
         <Header></Header>
@@ -66,13 +72,15 @@ class App extends React.Component {
   }
 }
 
-const mapStateToProps = state =>
+const mapStateToProps = createStructuredSelector
 ({
-    currentUser:state.user.currentUser
+    currentUser:selectCurrentUser,
+    collectionsArray :selectCollectionForPreview
 })
 
 const mapDispatchToProps = (dispatch) => ({
   setCurrentUser: (user) => dispatch(setCurrentUser(user)),
+ 
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

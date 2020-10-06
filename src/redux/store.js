@@ -5,7 +5,7 @@ import {persistStore} from 'redux-persist'
 import rootReducer from './root-reducer'
 
 let middlewares = []
-if(process.env.NODE_ENV === 'development')
+if(process.env.NODE_ENV === 'production')
 {
     // eslint-disable-next-line no-const-assign
     middlewares = [logger];

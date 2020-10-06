@@ -15,7 +15,7 @@ import {selectCartHidden} from '../../redux/cart/cart.selector'
 
 
 const Header = ({ currentUser,hidden }) => {
-  console.log(currentUser);
+ // console.log(currentUser);
   return (
     <HeaderContainer>
       <LogoContainer to="/">
