@@ -1,9 +1,10 @@
-import React, { useEffect } from "react";
-import CollectionOverviewContainer from "../../components/Collection-Overview/collection-overview.container";
-import CollectionContainer from "../Collection/collection.container";
+import React, { useEffect,lazy } from "react";
 import { Route } from "react-router-dom";
 import { connect } from "react-redux";
 import { fetchCollectionsStart } from "../../redux/shop/shop.action";
+
+const CollectionOverviewContainer = lazy(() => import("../../components/Collection-Overview/collection-overview.container"))
+const CollectionContainer = lazy(() => import("../Collection/collection.container"))
 
 const ShopPage = ({ fetchCollectionsStart, match }) => {
   useEffect (() => {

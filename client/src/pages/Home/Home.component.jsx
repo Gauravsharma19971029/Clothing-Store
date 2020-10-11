@@ -4,10 +4,12 @@ import {HomeContainerPage} from './Home.styles'
 import Directory from '../../components/Directory/directory.component'
 
 const Home = () =>
-    (
+  {  
+      
+    return(
         <HomeContainerPage>
             <Directory></Directory>
-        </HomeContainerPage>)
+        </HomeContainerPage>)}
 
 
 export default Home;

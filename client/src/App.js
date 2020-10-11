@@ -1,27 +1,36 @@
-import React,{useEffect} from "react";
-import "./App.css";
+import React, { useEffect, lazy, Suspense } from "react";
 import Header from "./components/Header/header.component.jsx";
-import Home from "./pages/Home/Home.component.jsx";
-import ShopPage from "./pages/Shop/shop.component.jsx";
-import SignInAndSignUp from "./pages/SignIn-SignUp/signIn-signUp.component.jsx";
-import CheckoutPage from "./pages/Checkout/checkout.component";
+
 import { Route, Switch, Redirect } from "react-router-dom";
 import { checkUserSession } from "./redux/user/user.action";
 import { selectCollectionForPreview } from "./redux/shop/shop.selector";
 import { selectCurrentUser } from "./redux/user/user.selector";
 import { createStructuredSelector } from "reselect";
 import { connect } from "react-redux";
+import { GlobalStyle } from "./global.styles";
+import Spinner from "./components/Spinner/spinner.component";
+import ErrorBoundary from './components/Error-Boundary/error-component.component.jsx';
 
-const App = ({checkUserSession,currentUser}) => {
+const Home = lazy(() => import("./pages/Home/Home.component.jsx"));
+const ShopPage = lazy(() => import("./pages/Shop/shop.component.jsx"));
+const CheckoutPage = lazy(() => import("./pages/Checkout/checkout.component"));
+const SignInAndSignUp = lazy(() =>
+  import("./pages/SignIn-SignUp/signIn-signUp.component.jsx")
+);
+const App = ({ checkUserSession, currentUser }) => {
   useEffect(() => {
     checkUserSession();
-  },[checkUserSession])
-    
-    return (
-      <div>
-        <Header></Header>
-        <Switch>
+  }, [checkUserSession]);
+
+  return (
+    <div>
+      <GlobalStyle />
+      <Header></Header>
+      <Switch>
+        <ErrorBoundary>
+        <Suspense fallback={<Spinner />}>
           <Route exact path="/" component={Home}></Route>
+
           <Route path="/shop" component={ShopPage}></Route>
           <Route
             exact
@@ -31,11 +40,12 @@ const App = ({checkUserSession,currentUser}) => {
             }
           ></Route>
           <Route exact path="/checkout" component={CheckoutPage}></Route>
-        </Switch>
-      </div>
-    );
-  }
-
+        </Suspense>
+        </ErrorBoundary>
+      </Switch>
+    </div>
+  );
+};
 
 const mapStateToProps = createStructuredSelector({
   currentUser: selectCurrentUser,
