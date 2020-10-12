@@ -1,4 +1,4 @@
-# Clothing-Store
+# Clothing-Store(ShopTrendz)
 ShopTrendz is an E-commerce clothing store where people can buy different clothing items and accessories for them browsing through different categories.
 
 Website is developed using React, Redux ,Redux-Saga and firebase .
