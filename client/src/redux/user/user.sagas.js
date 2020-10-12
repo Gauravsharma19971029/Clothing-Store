@@ -26,6 +26,7 @@ export function* signInWithGoogle() {
     yield put(
       googleSigninSuccess({ id: userSnapshot.id, ...userSnapshot.data() })
     );
+    alert("Login Successful")
   } catch (error) {
     yield put(googleSigninFailure(error));
   }
@@ -40,8 +41,11 @@ export function* signInWithEmail({ payload: { email, password } }) {
     yield put(
       emailSigninSuccess({ id: userSnapshot.id, ...userSnapshot.data() })
     );
+    alert("Login Successful")
   } catch (error) {
     yield put(emailSigninFailure(error));
+    alert(error.message)
+
   }
 }
 
@@ -57,6 +61,8 @@ export function* isUserAuthenticated() {
     );
   } catch (error) {
     yield put(emailSigninFailure(error));
+    alert(error.message)
+
   }
 }
 
@@ -66,6 +72,8 @@ export function* signOut() {
     yield put(signOutSuccess());
   } catch (error) {
     yield put(signOutFailure(error));
+    alert(error.message)
+
   }
 }
 
@@ -80,6 +88,7 @@ export function* signUp({ payload: {email,password,displayName} }) {
   } catch (error) {
       console.log(error)
     yield put(signUpFailure(error));
+    alert(error.message)
   }
 }
 
