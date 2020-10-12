@@ -11,7 +11,7 @@ Also integrated the stripe payment integration and used node backend for handlin
 
 ![Collection Preview](https://user-images.githubusercontent.com/32682542/95718935-c2516100-0c8c-11eb-94c4-efb4c30e008f.png)
 
-![Collection Item](https://user-images.githubusercontent.com/32682542/95719077-f298ff80-0c8c-11eb-9b6d-071e9145a94b.png)
+![Collection Item](https://user-images.githubusercontent.com/32682542/95720860-69cf9300-0c8f-11eb-81aa-eeaaae8ed465.png)
 
 ![Cart Dropdown](https://user-images.githubusercontent.com/32682542/95719262-2ecc6000-0c8d-11eb-9edb-e682af942c80.png)
 
