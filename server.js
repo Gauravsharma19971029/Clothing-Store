@@ -6,14 +6,12 @@ const compression = require("compression");
 const nodemailer = require("nodemailer");
 const sendgridTransport = require("nodemailer-sendgrid-transport");
 
-const key =
-  "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";
 
 const transporter = nodemailer.createTransport(
   sendgridTransport({
     auth: {
       api_key:
-        "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",
+        process.env.SEND_GRID_KEY
     },
   })
 );
